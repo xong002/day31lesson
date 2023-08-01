@@ -8,7 +8,7 @@
     <button class="btn btn-failure" (click)="toggleRight()">Toggle right</button>
   </div>
   <div class="row">
-    <div class="col" [hidden]="leftEnabled">
+    <div class="col" *ngIf="leftEnabled">
         <app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
     </div>
     <div class="col" [hidden]="rightEnabled">

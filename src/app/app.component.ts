@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day31lesson';
+
+  updatedNumber: number;
+  changedNumber(eventNumber: number){
+    this.updatedNumber = eventNumber;
+    console.log('parent number: ' + this.updatedNumber);
+  }
 }

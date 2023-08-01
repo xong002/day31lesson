@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -6,15 +6,18 @@ import { Subject } from 'rxjs';
   templateUrl: './fruits.component.html',
   styleUrls: ['./fruits.component.css'],
 })
-export class FruitsComponent {
+
+export class FruitsComponent implements OnInit {
   
-  
-  fruit: string = 'Durian';
+  fruitTest: string = 'Durian';
 
   fullName: string = 'Darryl Ng';
 
   @Output() onFontSize = new Subject<number>();
   fontSize: string = '10em';
+
+
+  fruits: [{ name: string; quantity: number }]; // how to initialise empty array and just push objects?
 
   testClick() {
     console.log('Button clicked');
@@ -27,5 +30,10 @@ export class FruitsComponent {
     this.onFontSize.next(fontSize);
   }
 
-  
+  ngOnInit(): void {
+    this.fruits = [{ name: 'mango', quantity: 10}];
+    this.fruits.push({ name: 'pear', quantity: 10});
+    this.fruits.push({ name: 'apple', quantity: 2});
+    this.fruits.push({ name: 'durian', quantity: 1})
+  }
 }

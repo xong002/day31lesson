@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-data-display',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-display.component.css']
 })
 export class DataDisplayComponent {
-
+  @Input() numberInput: number;
 }

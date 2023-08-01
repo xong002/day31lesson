@@ -1,2 +1,17 @@
 <app-fruits> </app-fruits>
-<app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
+
+<br /><br />
+
+<div class="container">
+  <div class="row">
+    <button class="btn btn-success" (click)="toggleLeft()">Toggle left</button>
+    <button class="btn btn-failure" (click)="toggleRight()">Toggle right</button>
+  </div>
+  <div class="row">
+    <div class="col" [hidden]="leftEnabled">
+        <app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
+    </div>
+    <div class="col" [hidden]="rightEnabled">
+        <app-data-display [numberInput]="updatedNumber"></app-data-display></div>
+  </div>
+</div>
